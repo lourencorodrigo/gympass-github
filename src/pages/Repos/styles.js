@@ -19,3 +19,7 @@ export const Logo = styled.img`
 export const InputWrapper = styled.div`
   width: 250px;
 `;
+
+export const TableWrapper = styled.div`
+  padding-top: 24px;
+`;

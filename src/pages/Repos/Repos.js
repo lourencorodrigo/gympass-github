@@ -4,8 +4,9 @@ import PropTypes from "prop-types";
 import logoGitHub from "../../static/images/github.svg";
 
 import TextField from "../../components/TextField/TextField";
+import Table from "../../components/Table";
 
-import { Wrapper, Header, Logo, InputWrapper } from "./styles";
+import { Wrapper, Header, Logo, InputWrapper, TableWrapper } from "./styles";
 
 class Repos extends React.Component {
   constructor(props) {
@@ -46,6 +47,26 @@ class Repos extends React.Component {
             />
           </InputWrapper>
         </Header>
+        <TableWrapper>
+          <Table>
+            <Table.Thead>
+              <Table.Tr>
+                <Table.Th>REPOSITÓRIOS</Table.Th>
+                <Table.Th>STARTS</Table.Th>
+              </Table.Tr>
+            </Table.Thead>
+            <Table.Tbody>
+              <Table.Tr>
+                <Table.Td>Jill</Table.Td>
+                <Table.Td>5</Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>Eve</Table.Td>
+                <Table.Td>3</Table.Td>
+              </Table.Tr>
+            </Table.Tbody>
+          </Table>
+        </TableWrapper>
       </Wrapper>
     );
   }
