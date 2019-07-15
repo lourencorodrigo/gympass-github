@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { em } from "../../styles/tools";
 
 export const Wrapper = styled.div`
+  font-size: 12px;
   background: #3c4352;
   width: 100%;
   height: ${em(60)};
