@@ -1,27 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { ReactComponent as StarIcon } from "../../../static/images/star.svg";
+import { Li } from "./styles";
 
-import { Li, Title, Stars, Header, Body } from "./styles";
-
-const ListItem = ({ children, stars }) => (
-  <Li>
-    <a href="/#">
-      <Header>
-        <Title>{children}</Title>
-      </Header>
-      <Body>
-        <StarIcon />
-        <Stars>{stars}</Stars>
-      </Body>
-    </a>
-  </Li>
-);
+const ListItem = ({ children }) => <Li>{children}</Li>;
 
 ListItem.propTypes = {
-  children: PropTypes.string.isRequired,
-  stars: PropTypes.number.isRequired
+  children: PropTypes.any.isRequired
 };
 
 export default ListItem;
