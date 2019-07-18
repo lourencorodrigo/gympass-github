@@ -1,3 +1,7 @@
 import { combineReducers } from "redux";
 
-export default combineReducers({});
+import { repos } from "./repos";
+
+export default combineReducers({
+  repos
+});

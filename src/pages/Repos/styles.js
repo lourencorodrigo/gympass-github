@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   max-width: 920px;
-  padding-top: 20px;
+  padding: 20px;
   margin: 0 auto;
 `;
 
@@ -16,7 +16,7 @@ export const Logo = styled.img`
   width: 40px;
 `;
 
-export const InputWrapper = styled.div`
+export const Form = styled.form`
   width: 250px;
 `;
 

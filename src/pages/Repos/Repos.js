@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 import logoGitHub from "../../static/images/github.svg";
 
 import TextField from "../../components/TextField/TextField";
-import Table from "../../components/Table";
+import ListRepos from "../../containers/ListRepos";
 
-import { Wrapper, Header, Logo, InputWrapper, TableWrapper } from "./styles";
+import { Wrapper, Header, Logo, Form, TableWrapper } from "./styles";
 
 class Repos extends React.Component {
   constructor(props) {
@@ -16,6 +16,7 @@ class Repos extends React.Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -25,6 +26,14 @@ class Repos extends React.Component {
       }
     } = this.props;
     this.setState({ user });
+    if (user) {
+      this.getAllRepos(user);
+    }
+  }
+
+  getAllRepos(user) {
+    const { getAll } = this.props;
+    getAll(user);
   }
 
   handleChange(event) {
@@ -32,40 +41,32 @@ class Repos extends React.Component {
     this.setState({ [name]: value });
   }
 
+  handleSubmit(event) {
+    event.preventDefault();
+    const { user } = this.state;
+    this.getAllRepos(user);
+  }
+
   render() {
     const { user } = this.state;
+    const {
+      reposState: { repos, loading }
+    } = this.props;
     return (
       <Wrapper>
         <Header>
           <Logo src={logoGitHub} />
-          <InputWrapper>
+          <Form onSubmit={this.handleSubmit}>
             <TextField
               onChange={this.handleChange}
               name="user"
               id="user"
               value={user}
             />
-          </InputWrapper>
+          </Form>
         </Header>
         <TableWrapper>
-          <Table>
-            <Table.Thead>
-              <Table.Tr>
-                <Table.Th>REPOSITÓRIOS</Table.Th>
-                <Table.Th>STARTS</Table.Th>
-              </Table.Tr>
-            </Table.Thead>
-            <Table.Tbody>
-              <Table.Tr>
-                <Table.Td>Jill</Table.Td>
-                <Table.Td>5</Table.Td>
-              </Table.Tr>
-              <Table.Tr>
-                <Table.Td>Eve</Table.Td>
-                <Table.Td>3</Table.Td>
-              </Table.Tr>
-            </Table.Tbody>
-          </Table>
+          <ListRepos repos={repos} loading={loading} />
         </TableWrapper>
       </Wrapper>
     );
@@ -73,7 +74,10 @@ class Repos extends React.Component {
 }
 
 Repos.propTypes = {
-  match: PropTypes.object
+  match: PropTypes.object,
+  reposState: PropTypes.object,
+  getAll: PropTypes.func,
+  loading: PropTypes.bool
 };
 
 export default Repos;
