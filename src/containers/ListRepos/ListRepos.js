@@ -21,7 +21,9 @@ const ListRepos = ({ repos, loading }) => (
         <List.Item key={repo.id}>
           <Header>
             <Title>
-              <Link to="/">{repo.name}</Link>
+              <Link to={`/commits/${repo.owner.login}/${repo.name}`}>
+                {repo.name}
+              </Link>
             </Title>
           </Header>
           <Body>

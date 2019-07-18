@@ -10,14 +10,14 @@ const initialState = {
   error: false
 };
 
-export const repos = (state = initialState, action) => {
+export const commits = (state = initialState, action) => {
   switch (action.type) {
     case SAGA_COMMITS_REQUEST:
       return { ...state, loading: true };
     case SAGA_COMMITS_SUCCESS:
       return {
         ...state,
-        repos: action.data,
+        commits: action.data,
         loading: false
       };
     case SAGA_COMMITS_FAILURE:
