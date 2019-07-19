@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShimmerLoading component should compare the component with a snapshot 1`] = `
+<div
+  className="sc-bdVaJa dpTItc"
+  height="16"
+  width="250"
+/>
+`;
