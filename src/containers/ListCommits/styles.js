@@ -16,7 +16,7 @@ export const Body = styled.div`
 export const Title = styled.h1`
   font-family: Roboto;
   font-style: normal;
-  font-weight: bold;
+  font-weight: normal;
   font-size: ${em(16)};
   margin: 0;
   color: #fcfeff;

@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { em } from "../../styles/tools";
 
 export const Wrapper = styled.div`
-  font-size: 12px;
-  background: #3c4352;
+  font-size: ${em(12)};
+  background: #283042;
   width: 100%;
   height: ${em(60)};
   border-radius: ${em(40)};
@@ -16,11 +16,11 @@ export const Wrapper = styled.div`
   transition: background 0.15s ease-in-out;
 
   &:hover {
-    background: #353d4c;
+    background: #252c3c;
   }
 
   &:focus-within {
-    background: #30384b;
+    background: #252c3c;
   }
 `;
 

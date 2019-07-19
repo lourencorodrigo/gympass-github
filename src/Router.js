@@ -9,8 +9,8 @@ const AppRouter = () => (
   <Router>
     <Switch>
       <Route path="/" exact component={Home} />
-      <Route path="/repos/:user" exact component={Repos} />
-      <Route path="/commits/:user/:repo" exact component={Commits} />
+      <Route path="/:user" exact component={Repos} />
+      <Route path="/:user/:repo" exact component={Commits} />
     </Switch>
   </Router>
 );

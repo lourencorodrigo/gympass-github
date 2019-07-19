@@ -16,7 +16,7 @@ export const Body = styled.div`
 export const Title = styled.h1`
   font-family: Roboto;
   font-style: normal;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 16px;
   margin: 0;
   color: #fcfeff;
@@ -31,4 +31,10 @@ export const Stars = styled.span`
   padding: 0 8px;
 `;
 
-export const Link = styled(LinkRouter)``;
+export const Link = styled(LinkRouter)`
+  color: white;
+
+  &:hover {
+    text-decoration: none;
+  }
+`;

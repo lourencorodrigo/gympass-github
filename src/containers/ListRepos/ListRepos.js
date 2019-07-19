@@ -19,17 +19,15 @@ const ListRepos = ({ repos, loading }) => (
     {!loading &&
       repos.map(repo => (
         <List.Item key={repo.id}>
-          <Header>
-            <Title>
-              <Link to={`/commits/${repo.owner.login}/${repo.name}`}>
-                {repo.name}
-              </Link>
-            </Title>
-          </Header>
-          <Body>
-            <StarIcon />
-            <Stars>{repo.stargazers_count}</Stars>
-          </Body>
+          <Link to={`/${repo.owner.login}/${repo.name}`}>
+            <Header>
+              <Title>{repo.name}</Title>
+            </Header>
+            <Body>
+              <StarIcon />
+              <Stars>{repo.stargazers_count}</Stars>
+            </Body>
+          </Link>
         </List.Item>
       ))}
     {loading && renderLinesLoading()}
