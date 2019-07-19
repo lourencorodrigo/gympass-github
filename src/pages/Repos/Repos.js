@@ -6,7 +6,8 @@ import logoGitHub from "../../static/images/github.svg";
 import TextField from "../../components/TextField/TextField";
 import ListRepos from "../../containers/ListRepos";
 
-import { Wrapper, Header, Logo, Form, TableWrapper } from "./styles";
+import { Wrapper, Header, Logo, Form } from "./styles";
+import TitlePage from "../../components/TitlePage";
 
 class Repos extends React.Component {
   constructor(props) {
@@ -65,9 +66,8 @@ class Repos extends React.Component {
             />
           </Form>
         </Header>
-        <TableWrapper>
-          <ListRepos repos={repos} loading={loading} />
-        </TableWrapper>
+        <TitlePage>Repositórios</TitlePage>
+        <ListRepos repos={repos} loading={loading} />
       </Wrapper>
     );
   }

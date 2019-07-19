@@ -6,8 +6,9 @@ import logoGitHub from "../../static/images/github.svg";
 
 import TextField from "../../components/TextField/TextField";
 import ListCommits from "../../containers/ListCommits";
+import TitlePage from "../../components/TitlePage";
 
-import { Wrapper, Header, Logo, Form, TableWrapper } from "./styles";
+import { Wrapper, Header, Logo, Form } from "./styles";
 
 class Commits extends React.Component {
   constructor(props) {
@@ -73,9 +74,8 @@ class Commits extends React.Component {
             />
           </Form>
         </Header>
-        <TableWrapper>
-          <ListCommits commits={commits} loading={loading} />
-        </TableWrapper>
+        <TitlePage>Commits</TitlePage>
+        <ListCommits commits={commits} loading={loading} />
       </Wrapper>
     );
   }

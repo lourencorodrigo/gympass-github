@@ -19,7 +19,3 @@ export const Logo = styled.img`
 export const Form = styled.form`
   width: 250px;
 `;
-
-export const TableWrapper = styled.div`
-  padding-top: 24px;
-`;
