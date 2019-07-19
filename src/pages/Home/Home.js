@@ -24,7 +24,8 @@ class Home extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const { user } = this.state;
-    this.props.history.push(`/repos/${user}`);
+    const { push } = this.props.history;
+    push(`/repos/${user}`);
   }
 
   render() {

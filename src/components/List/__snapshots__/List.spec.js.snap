@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List component should compare the component with a snapshot 1`] = `
+<ul
+  className="sc-bdVaJa lfmrhJ"
+>
+  <li
+    className="sc-bwzfXH iWjNCq"
+  >
+    Test 1
+  </li>
+  <li
+    className="sc-bwzfXH iWjNCq"
+  >
+    Test 2
+  </li>
+</ul>
+`;
