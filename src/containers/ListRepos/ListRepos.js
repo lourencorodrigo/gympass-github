@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { ReactComponent as StarIcon } from "../../static/images/star.svg";
+import { ReactComponent as StarIcon } from "../../assets/images/star.svg";
 import ShimmerLoading from "../../components/ShimmerLoading";
 import List from "../../components/List";
 

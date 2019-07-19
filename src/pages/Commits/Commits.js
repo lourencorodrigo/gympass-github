@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import queryString from "query-string";
 
-import logoGitHub from "../../static/images/github.svg";
+import logoGitHub from "../../assets/images/github.svg";
 
 import TextField from "../../components/TextField/TextField";
 import ListCommits from "../../containers/ListCommits";

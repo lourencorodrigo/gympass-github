@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import logoGitHub from "../../static/images/github.svg";
+import logoGitHub from "../../assets/images/github.svg";
 
 import TextField from "../../components/TextField/TextField";
 import ListRepos from "../../containers/ListRepos";
+import TitlePage from "../../components/TitlePage";
 
 import { Wrapper, Header, Logo, Form } from "./styles";
-import TitlePage from "../../components/TitlePage";
 
 class Repos extends React.Component {
   constructor(props) {

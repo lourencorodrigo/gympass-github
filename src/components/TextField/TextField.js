@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import iconSearch from "../../static/images/search.svg";
+import iconSearch from "../../assets/images/search.svg";
 
 import { Wrapper, Image, Input, Label } from "./styles";
 
