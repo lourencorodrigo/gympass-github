@@ -19,7 +19,7 @@ const ListRepos = ({ repos, loading }) => (
     {!loading &&
       repos.map(repo => (
         <List.Item key={repo.id}>
-          <Link to={`/${repo.owner.login}/${repo.name}`}>
+          <Link to={`/repos/${repo.owner.login}/${repo.name}/commits`}>
             <Header>
               <Title>{repo.name}</Title>
             </Header>

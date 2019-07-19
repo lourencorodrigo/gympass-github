@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 import TextField from "../../components/TextField";
@@ -24,7 +24,7 @@ class Home extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const { user } = this.state;
-    this.props.history.push(`/${user}`);
+    this.props.history.push(`/repos/${user}`);
   }
 
   render() {

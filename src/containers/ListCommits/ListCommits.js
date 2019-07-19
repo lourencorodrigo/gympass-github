@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import ShimmerLoading from "../../components/ShimmerLoading";
 import List from "../../components/List";
 
-import { WrapperShimmer, Title, Header, Body } from "./styles";
+import { WrapperShimmer, Title, Header } from "./styles";
 
 const renderLinesLoading = () =>
   [1, 2, 3, 4, 5].map(n => (

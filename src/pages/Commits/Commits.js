@@ -2,26 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import queryString from "query-string";
 
-import logoGitHub from "../../assets/images/github.svg";
-
-import TextField from "../../components/TextField/TextField";
 import ListCommits from "../../containers/ListCommits";
 import TitlePage from "../../components/TitlePage";
 
-import { Wrapper, Header, Logo, Form } from "./styles";
-
 class Commits extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      user: "",
-      page: 0
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
   componentDidMount() {
     const {
       match: {
@@ -44,39 +28,16 @@ class Commits extends React.Component {
     getAll(user, repo, page);
   }
 
-  handleChange(event) {
-    const { value, name } = event.target;
-    this.setState({ [name]: value });
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    const { user } = this.state;
-    this.getAllCommits(user);
-  }
-
   render() {
-    const { user } = this.state;
     const {
       commitsState: { commits, loading }
     } = this.props;
 
     return (
-      <Wrapper>
-        <Header>
-          <Logo src={logoGitHub} />
-          <Form onSubmit={this.handleSubmit}>
-            <TextField
-              onChange={this.handleChange}
-              name="user"
-              id="user"
-              value={user}
-            />
-          </Form>
-        </Header>
+      <>
         <TitlePage>Commits</TitlePage>
         <ListCommits commits={commits} loading={loading} />
-      </Wrapper>
+      </>
     );
   }
 }
