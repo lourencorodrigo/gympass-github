@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   height: 100%;
 `;
 
-export const WrapperInput = styled.div`
+export const Form = styled.form`
   width: ${em(280)};
   transition: width 0.25s ease-in;
 

@@ -15,12 +15,8 @@ export const Wrapper = styled.div`
   box-shadow: 0 0 ${em(5)} rgba(0, 0, 0, 0.24);
   transition: background 0.15s ease-in-out;
 
-  &:hover {
-    background: #252c3c;
-  }
-
   &:focus-within {
-    background: #252c3c;
+    background: white;
   }
 `;
 
@@ -40,7 +36,7 @@ export const Input = styled.input`
   width: 100%;
   outline-width: 0;
   font-weight: bold;
-  font-size: ${em(18)};
+  font-size: ${em(20)};
   line-height: ${em(28)};
   height: 90%;
   color: #717888;

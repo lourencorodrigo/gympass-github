@@ -1,15 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 import TextField from "../../components/TextField";
 
-import { Wrapper, WrapperInput } from "./styles";
+import { Wrapper, Form } from "./styles";
 
-const Home = () => (
-  <Wrapper>
-    <WrapperInput>
-      <TextField id="user" placeholder="Enter Your User GitHub" type="text" />
-    </WrapperInput>
-  </Wrapper>
-);
+class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: ""
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    const { value, name } = event.target;
+    this.setState({ [name]: value });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    const { user } = this.state;
+    this.props.history.push(`/${user}`);
+  }
+
+  render() {
+    const { user } = this.state;
+    return (
+      <Wrapper>
+        <Form onSubmit={this.handleSubmit}>
+          <TextField
+            onChange={this.handleChange}
+            value={user}
+            name="user"
+            id="user"
+            placeholder="Enter Your User GitHub"
+            type="text"
+          />
+        </Form>
+      </Wrapper>
+    );
+  }
+}
+
+Home.propTypes = {
+  history: PropTypes.object
+};
 
 export default Home;
