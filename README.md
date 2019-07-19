@@ -1,68 +1,43 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Instalação de dependências
 
-## Available Scripts
+### Demo
 
-In the project directory, you can run:
+[Clique aqui](https://gympass-github.firebaseapp.com/) para visualizar a demo do sistema
 
-### `npm start`
+### `npm install`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Instale as dependências do projeto.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### `npm install`
+
+Execute o app em ambiente de desenvolvimento. Será levantando um servidor em `http://localhost:3000`
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Execute os testes unitários em modo interativo.
+
+### `npm run coverage`
+
+Execute os testes unitários com o coverage para análise de cobertura de código.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Execute o build da aplicação para produção.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Feature do ES6 utilizadas neste projeto
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### let e const
 
-### `npm run eject`
+Todas as declarações de variáveis deste projeto foram feitas const. Esta nova forma de declaração de variável soluciona o problema de escopo que o var possue. Além disto as declarações com const não poderão ter novas atribuições após sua declaração já que é uma constante.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### spread operator
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Todos os reducers deste projeto utilizaram o spread operator para criar uma cópia de todas as propriedades do state e com isso manter a imutabilidade do Redux.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### arrow functions
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Além de ter uma sintaxe menor que a declaração de funções normais a arrow function não mantém um this próprio, ele mantém o this do contexto no qual é declarado. Com isso evitamos, por exemplo, o .bind(this) quando trabalhamos com o JSX.
 
-## Learn More
+#### destructuring
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Alguns variáveis deste projeto são atribuídas utilizando o destructuring de objetos. Os imports do tipo `import { objeto } = ...` também são com destructuring.
